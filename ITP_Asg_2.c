@@ -28,7 +28,7 @@ int add (struct players pl){
     if (pl.age < 18 || pl.age > 100){       //cheking if age is not out of bounds
         kont = 5;
     }
-    c=pl.name[0];
+    c = pl.name[0];
     if (c - 'A' < 0 || c - 'A' > 26){       //cheking if name starting with capital letter
         kont = 4;
     }
@@ -43,7 +43,7 @@ int add (struct players pl){
     }
     return kont;
 }
-int up(struct players pl){
+int up (struct players pl){
     char c, cc[20];
     for (int i = 0; i < k; i++){    //find position of updating percon in structure's massive
         if (pl.id == a[i]){
@@ -59,7 +59,7 @@ int up(struct players pl){
     if (pl.age < 18 || pl.age > 100){
         kont = 4;
     }
-    c=pl.name[0];
+    c = pl.name[0];
     if (c - 'A' < 0 || c - 'A' > 26){
         kont = 5;
     }
@@ -121,8 +121,8 @@ int main (){
             }
             par=0;
             for (int i = 0; i < k; i++){
-                if(a[i] == z){
-                    par=1;
+                if (a[i] == z){
+                    par = 1;
                     fprintf(out, "Found\n");
                 }
             }
@@ -137,10 +137,10 @@ int main (){
                 fprintf(out,"Invalid inputs");
                 return 0;
             }
-            par=0;
-            ind=0;
+            par = 0;
+            ind = 0;
             for (int i = 0; i < k; i++){
-                if(a[i] == z){
+                if (a[i] == z){
                     par = 1;
                 }
                 else {                  //copying every element besides which we want to delete
@@ -153,8 +153,8 @@ int main (){
                 fprintf(out, "Impossible to delete\n");
             }
             else {                      //copying a1 to a, n1 to n and "erase" information from a1 and n1
-                memcpy(a, a1,1000);
-                memcpy(n, n1,100000);
+                memcpy(a, a1, 1000);
+                memcpy(n, n1, 10000);
                 memset(a1, 0, 1000);
                 memset(n1, 0, 10000);
                 k--;
@@ -169,7 +169,7 @@ int main (){
             for (int i = 0; i < k; i++){
                 fprintf(out,"ID: %d, Name: %s, Position: %s, Age: %d, Goals: %d\n", n[i].id, n[i].name, n[i].pos, n[i].age, n[i].goals);
             }
-            meow=0;
+            meow = 0;
         }
         if (strcmp(s,"Display") != 0 && strcmp(s,"Add") != 0 && strcmp(s,"Update") != 0 && strcmp(s,"Search") != 0 && strcmp(s,"Delete") != 0){
             fprintf(out,"Invalid inputs");
